@@ -1,0 +1,14 @@
+services:
+  apache:
+    image: 'bitnami/apache:latest'
+    networks:
+      - backend
+    ports:
+      - '80:8080'
+    #  - '443:8443'
+    volumes:
+      - ./app:/app
+networks:
+  backend:
+    name: backend
+    external: true
